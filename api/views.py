@@ -1,0 +1,63 @@
+from rest_framework.generics import ListAPIView
+from .models import Contacts, Events,Council,Gallery,Workshops,PreviousWorkshops,Lectures,PreviousLectures,Pal,PhdDPPC,PhdCPPC,PhdSPPC,UgCouncil,LanguageTeam,LanguageCourses
+from .serializers import ContactsSerializer, EventsSerializer, CouncilSerializer, GallerySerializer,WorkshopsSerializer,PreviousWorkshopsSerializer,LecturesSerializer,PreviousLecturesSerializer,PalSerializer,UgCouncilSerializer,PhdCPPCSerializer,PhdDPPCSerializer,PhdSPPCSerializer,LanguageTeamSerializer,LanguageCoursesSerializer
+
+class Contacts(ListAPIView):
+    queryset = Contacts.objects.all()
+    serializer_class = ContactsSerializer
+
+class Events(ListAPIView):
+    queryset = Events.objects.all()
+    serializer_class = EventsSerializer
+
+class Council(ListAPIView):
+    queryset = Council.objects.all()
+    serializer_class = CouncilSerializer
+
+class Gallery(ListAPIView):
+    queryset = Gallery.objects.all()
+    serializer_class = GallerySerializer
+
+class Workshops(ListAPIView):
+    queryset = Workshops.objects.all()
+    serializer_class = WorkshopsSerializer
+
+class PreviousWorkshops(ListAPIView):
+    queryset = PreviousWorkshops.objects.all()
+    serializer_class = PreviousWorkshopsSerializer
+
+class Lectures(ListAPIView):
+    queryset = Lectures.objects.all()
+    serializer_class = LecturesSerializer
+
+class PreviousLectures(ListAPIView):
+    queryset = PreviousLectures.objects.all()
+    serializer_class = PreviousLecturesSerializer
+
+class Pal(ListAPIView):
+    queryset = Pal.objects.all()
+    serializer_class = PalSerializer
+
+class UgCouncil(ListAPIView):
+    queryset = UgCouncil.objects.all()
+    serializer_class = UgCouncilSerializer
+
+class PhdDPPC(ListAPIView):
+    queryset = PhdDPPC.objects.all()
+    serializer_class = PhdDPPCSerializer
+
+class PhdCPPC(ListAPIView):
+    queryset = PhdCPPC.objects.all()
+    serializer_class = PhdCPPCSerializer
+
+class PhdSPPC(ListAPIView):
+    queryset = PhdSPPC.objects.all()
+    serializer_class = PhdSPPCSerializer
+
+class LanguageTeam(ListAPIView):
+    queryset = LanguageTeam.objects.all()
+    serializer_class = LanguageTeamSerializer
+
+class LanguageCourses(ListAPIView):
+    queryset = LanguageCourses.objects.all()
+    serializer_class = LanguageCoursesSerializer
