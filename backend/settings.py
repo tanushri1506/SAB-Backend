@@ -21,11 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^ug0g^^a0*ir3loqso1xlgqv$8b^dp&9od3b^!adr$vazfuaqp'
 
-# SECRET_KEY = config('SECRET_KEY', default='changeme')
-# DEBUG = config('DEBUG', default=False, cast=bool)
-DEBUG=True
+
+SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
@@ -50,6 +49,9 @@ INSTALLED_APPS = [
 
     # Local
     'api',
+
+    "cloudinary",
+    "cloudinary_storage",
 ]
 
 MIDDLEWARE = [
@@ -173,3 +175,11 @@ MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+}
