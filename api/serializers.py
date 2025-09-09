@@ -126,26 +126,21 @@ class GallerySerializer(serializers.ModelSerializer):
 
 
 class WorkshopsSerializer(serializers.ModelSerializer):
-    poster = serializers.SerializerMethodField()
+    photo = serializers.SerializerMethodField()
 
     class Meta:
         model = Workshops
         fields = '__all__'
 
-    def get_poster(self, obj):
-        return obj.poster.url if obj.poster else None
+    def get_photo(self, obj):
+        return obj.photo.url if obj.photo else None
 
 
 class PreviousWorkshopsSerializer(serializers.ModelSerializer):
-    poster = serializers.SerializerMethodField()
-
+    
     class Meta:
         model = PreviousWorkshops
         fields = '__all__'
-
-    def get_poster(self, obj):
-        return obj.poster.url if obj.poster else None
-
 
 class LecturesSerializer(serializers.ModelSerializer):
     poster = serializers.SerializerMethodField()
@@ -159,14 +154,9 @@ class LecturesSerializer(serializers.ModelSerializer):
 
 
 class PreviousLecturesSerializer(serializers.ModelSerializer):
-    poster = serializers.SerializerMethodField()
-
     class Meta:
         model = PreviousLectures
         fields = '__all__'
-
-    def get_poster(self, obj):
-        return obj.poster.url if obj.poster else None
 
 
 class PalSerializer(serializers.ModelSerializer):
