@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contacts, Events,Council,Gallery,PreviousWorkshops,Workshops,Lectures,PreviousLectures,Pal,UgCouncil,PhdDPPC,PhdCPPC,PhdSPPC,LanguageTeam,LanguageCourses
+from .models import Contacts, Events,Council,Gallery,PreviousWorkshops,Workshops,Lectures,PreviousLectures,Pal,UgCouncil,PhdDPPC,PhdCPPC,PhdSPPC,LanguageTeam,LanguageCourses,BranchRepresentative
 admin.site.register(Contacts)
 admin.site.register(Events)
 admin.site.register(Council)
@@ -15,3 +15,10 @@ admin.site.register(PhdCPPC)
 admin.site.register(PhdSPPC)
 admin.site.register(LanguageTeam)
 admin.site.register(LanguageCourses)
+
+
+@admin.register(BranchRepresentative)
+class BranchRepresentativesAdmin(admin.ModelAdmin):
+    list_display = ("name", "post", "tenure")
+    list_filter = ("tenure",)
+    search_fields = ("name", "post")
