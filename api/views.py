@@ -10,9 +10,21 @@ class Events(ListAPIView):
     queryset = Events.objects.all()
     serializer_class = EventsSerializer
 
-class Council(ListAPIView):
-    queryset = Council.objects.all()
+
+class CouncilListView(ListAPIView):
     serializer_class = CouncilSerializer
+
+    def get_queryset(self):
+        tenure = self.request.GET.get("tenure")
+
+        if tenure == "all":
+            # Return all council entries for dropdown (including current year if you want)
+            return Council.objects.all().order_by("-tenure")
+        elif tenure:
+            return Council.objects.filter(tenure=tenure)
+        # Default: current tenure
+        return Council.objects.filter(tenure="2025-26")
+
 
 class Gallery(ListAPIView):
     queryset = Gallery.objects.all()

@@ -21,13 +21,14 @@ class Council(models.Model):
     phone = models.CharField(max_length=50, blank=True)
     email = models.EmailField(blank=True)
     linkedin = models.URLField(blank=True)
+    tenure = models.CharField(max_length=20)
     photo = CloudinaryField('image', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "Council"
 
     def __str__(self):
-        return self.name
+        return f"{self.name} ({self.tenure})"
 
 
 class Events(models.Model):

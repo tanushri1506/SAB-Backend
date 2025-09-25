@@ -1,11 +1,11 @@
 # urls.py
 from django.urls import path
-from .views import Contacts, Events,Council,Gallery,Workshops,PreviousWorkshops,Lectures,PreviousLectures,Pal,UgCouncil,PhdDPPC,PhdCPPC,PhdSPPC,LanguageTeam,LanguageCourses,BranchRepresentatives
+from .views import Contacts, Events,CouncilListView,Gallery,Workshops,PreviousWorkshops,Lectures,PreviousLectures,Pal,UgCouncil,PhdDPPC,PhdCPPC,PhdSPPC,LanguageTeam,LanguageCourses,BranchRepresentatives
 
 urlpatterns = [
     path('api/contacts/', Contacts.as_view(), name='contacts-list'),
     path('api/events/', Events.as_view(), name='events-list'),
-    path('api/council/', Council.as_view(), name='team-list'),
+    path('api/council/', CouncilListView.as_view(), name='team-list'),
     path('api/gallery/', Gallery.as_view(), name='gallery-list'),
     path('api/workshops/', Workshops.as_view(), name='workshops-list'),
     path('api/previous-workshops/', PreviousWorkshops.as_view(), name='previous-workshops-list'),
