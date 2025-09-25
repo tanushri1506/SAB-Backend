@@ -119,18 +119,14 @@ class PreviousLectures(models.Model):
 
 
 class Pal(models.Model):
-    name = models.CharField(max_length=200)
-    post = models.CharField(max_length=200, blank=True)
-    phone = models.CharField(max_length=50, blank=True)
-    email = models.EmailField(blank=True)
-    linkedin = models.URLField(blank=True)
-    photo = CloudinaryField('image', blank=True, null=True)
+    label = models.CharField(max_length=200)
+    photo = CloudinaryField('image',blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "Pal"
 
     def __str__(self):
-        return self.name
+        return self.label
 
 
 class UgCouncil(models.Model):
