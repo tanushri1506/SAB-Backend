@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contacts, Events,Council,Gallery,PreviousWorkshops,Workshops,Lectures,PreviousLectures,Pal,UgCouncil,PhdDPPC,PhdCPPC,PhdSPPC,LanguageTeam,LanguageCourses,BranchRepresentative
+from .models import Contacts, Events,Council,Gallery,PreviousWorkshops,Workshops,Lectures,PreviousLectures,Pal,UgCouncil,PhdDPPC,PhdCPPC,PhdSPPC,LanguageTeam,LanguageCourses,BranchRepresentative, Carousel
 admin.site.register(Contacts)
 admin.site.register(Events)
 admin.site.register(Gallery)
@@ -14,6 +14,7 @@ admin.site.register(PhdCPPC)
 admin.site.register(PhdSPPC)
 admin.site.register(LanguageTeam)
 admin.site.register(LanguageCourses)
+admin.site.register(Carousel)
 
 @admin.register(Council)
 class CouncilAdmin(admin.ModelAdmin):

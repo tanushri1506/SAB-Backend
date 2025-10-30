@@ -6,5 +6,7 @@ __pycache__/
 staticfiles/
 media/
 .env
+*.dump
+*.backup
 
 upload_media.py

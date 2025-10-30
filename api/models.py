@@ -1,6 +1,255 @@
 
+# from django.db import models
+# from cloudinary.models import CloudinaryField
+
+# class Contacts(models.Model):
+#     role = models.CharField(max_length=200, blank=True)
+#     name = models.CharField(max_length=200, blank=True)
+#     phone = models.CharField(max_length=50, blank=True)
+#     email = models.EmailField(blank=True)
+
+#     class Meta:
+#         verbose_name_plural = "Contacts"
+
+#     def __str__(self):
+#         return self.name or "Unnamed Contact"
+
+
+# class Council(models.Model):
+#     name = models.CharField(max_length=200)
+#     post = models.CharField(max_length=200, blank=True)
+#     phone = models.CharField(max_length=50, blank=True)
+#     email = models.EmailField(blank=True)
+#     linkedin = models.URLField(blank=True)
+#     tenure = models.CharField(max_length=20)
+#     photo = CloudinaryField('image', blank=True, null=True)
+
+#     class Meta:
+#         verbose_name_plural = "Council"
+
+#     def __str__(self):
+#         return f"{self.name} ({self.tenure})"
+
+
+# class Events(models.Model):
+#     title = models.CharField(max_length=200)
+#     url = models.URLField(blank=True)
+#     icon = CloudinaryField('image', blank=True, null=True)
+
+#     class Meta:
+#         verbose_name_plural = "Events"
+
+#     def __str__(self):
+#         return self.title
+
+
+# class Gallery(models.Model):
+#     label = models.CharField(max_length=200)
+#     image = CloudinaryField('image')
+
+#     class Meta:
+#         verbose_name_plural = "Gallery"
+
+#     def __str__(self):
+#         return self.label
+    
+
+# class Workshops(models.Model):
+#     title = models.CharField(max_length=200)
+#     photo = CloudinaryField('image')
+#     instructors = models.JSONField(default=list, blank=True, null=True)
+#     mode = models.CharField(max_length=50)
+#     date = models.CharField(max_length=100)
+#     fees = models.CharField(max_length=50)
+#     url = models.URLField()
+#     schedule = models.JSONField(default=list)
+#     highlights = models.JSONField(default=list)
+#     location = models.CharField(max_length=200)
+#     benefits = models.TextField()
+
+#     class Meta:
+#         verbose_name_plural = "Workshops"
+
+#     def __str__(self):
+#         return self.title
+    
+
+# class PreviousWorkshops(models.Model):
+#     title = models.CharField(max_length=200)
+#     link = models.URLField(blank=True)
+#     alt = models.CharField(max_length=200)
+
+#     class Meta:
+#         verbose_name_plural = "PreviousWorkshops"
+
+#     def __str__(self):
+#         return self.title
+
+
+# class Lectures(models.Model):
+#     title = models.CharField(max_length=200)
+#     photo = CloudinaryField('image')
+#     instructors = models.JSONField(default=list, blank=True, null=True)
+#     mode = models.CharField(max_length=50)
+#     date = models.CharField(max_length=100)
+#     fees = models.CharField(max_length=50)
+#     url = models.URLField()
+#     schedule = models.JSONField(default=list)
+#     highlights = models.JSONField(default=list)
+#     location = models.CharField(max_length=200)
+#     benefits = models.TextField()
+
+#     class Meta:
+#         verbose_name_plural = "Lectures"
+
+#     def __str__(self):
+#         return self.title
+    
+
+# class PreviousLectures(models.Model):
+#     title = models.CharField(max_length=200)
+#     link = models.URLField(blank=True)
+#     alt = models.CharField(max_length=200)
+
+#     class Meta:
+#         verbose_name_plural = "PreviousLectures"
+
+#     def __str__(self):
+#         return self.title
+
+
+# class Pal(models.Model):
+#     label = models.CharField(max_length=200)
+#     photo = CloudinaryField('image',blank=True, null=True)
+
+#     class Meta:
+#         verbose_name_plural = "Pal"
+
+#     def __str__(self):
+#         return self.label
+
+
+# class UgCouncil(models.Model):
+#     name = models.CharField(max_length=200)
+#     post = models.CharField(max_length=200, blank=True)
+#     phone = models.CharField(max_length=50, blank=True)
+#     email = models.EmailField(blank=True)
+#     linkedin = models.URLField(blank=True)
+#     photo = CloudinaryField('image', blank=True, null=True)
+
+#     class Meta:
+#         verbose_name_plural = "UgCouncil"
+
+#     def __str__(self):
+#         return self.name
+
+
+# class PhdDPPC(models.Model):
+#     name = models.CharField(max_length=200)
+#     post = models.CharField(max_length=200, blank=True)
+#     phone = models.CharField(max_length=50, blank=True)
+#     email = models.EmailField(blank=True)
+#     linkedin = models.URLField(blank=True)
+#     photo = CloudinaryField('image', blank=True, null=True)
+
+#     class Meta:
+#         verbose_name_plural = "PhdDPPC"
+
+#     def __str__(self):
+#         return self.name
+
+
+# class PhdCPPC(models.Model):
+#     name = models.CharField(max_length=200)
+#     post = models.CharField(max_length=200, blank=True)
+#     phone = models.CharField(max_length=50, blank=True)
+#     email = models.EmailField(blank=True)
+#     linkedin = models.URLField(blank=True)
+#     photo = CloudinaryField('image', blank=True, null=True)
+
+#     class Meta:
+#         verbose_name_plural = "PhdCPPC"
+
+#     def __str__(self):
+#         return self.name
+
+
+# class PhdSPPC(models.Model):
+#     name = models.CharField(max_length=200)
+#     post = models.CharField(max_length=200, blank=True)
+#     phone = models.CharField(max_length=50, blank=True)
+#     email = models.EmailField(blank=True)
+#     linkedin = models.URLField(blank=True)
+#     photo = CloudinaryField('image', blank=True, null=True)
+
+#     class Meta:
+#         verbose_name_plural = "PhdSPPC"
+
+#     def __str__(self):
+#         return self.name
+
+
+# class LanguageTeam(models.Model):
+#     name = models.CharField(max_length=200)
+#     post = models.CharField(max_length=200, blank=True)
+#     phone = models.CharField(max_length=50, blank=True)
+#     email = models.EmailField(blank=True)
+#     linkedin = models.URLField(blank=True)
+#     photo = CloudinaryField('image', blank=True, null=True)
+
+#     class Meta:
+#         verbose_name_plural = "LanguageTeam"
+
+#     def __str__(self):
+#         return self.name
+
+
+# class LanguageCourses(models.Model):
+#     title = models.CharField(max_length=200)
+#     photo = CloudinaryField('image')
+#     instructors = models.JSONField(default=list, blank=True, null=True)
+#     mode = models.CharField(max_length=50)
+#     date = models.CharField(max_length=100)
+#     fees = models.CharField(max_length=50)
+#     url = models.URLField()
+#     schedule = models.JSONField(default=list)
+#     highlights = models.JSONField(default=list)
+#     location = models.CharField(max_length=200)
+#     benefits = models.TextField()
+
+#     class Meta:
+#         verbose_name_plural = "LanguageCourses"
+
+#     def __str__(self):
+#         return self.title
+
+
+# class BranchRepresentative(models.Model):
+#     TENURE_CHOICES = [
+#         ("2024-28", "2024-28"),
+#         ("2023-27", "2023-27"),
+#         ("2022-26", "2022-26"),
+#     ]
+
+#     name = models.CharField(max_length=100)
+#     post = models.CharField(max_length=100)
+#     phone = models.CharField(max_length=20, blank=True)
+#     email = models.EmailField(blank=True)
+#     linkedin = models.URLField(blank=True)
+#     photo = CloudinaryField('image', blank=True, null=True)
+#     tenure = models.CharField(max_length=7, choices=TENURE_CHOICES, default="2024-28")
+
+#     class Meta:
+#         verbose_name_plural = "BranchRepresentatives"
+
+
+#     def __str__(self):
+#         return f"{self.name} ({self.tenure})"
+
+
+
 from django.db import models
-from cloudinary.models import CloudinaryField
+
 
 class Contacts(models.Model):
     role = models.CharField(max_length=200, blank=True)
@@ -22,7 +271,7 @@ class Council(models.Model):
     email = models.EmailField(blank=True)
     linkedin = models.URLField(blank=True)
     tenure = models.CharField(max_length=20)
-    photo = CloudinaryField('image', blank=True, null=True)
+    photo = models.ImageField(upload_to='council/', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "Council"
@@ -34,7 +283,7 @@ class Council(models.Model):
 class Events(models.Model):
     title = models.CharField(max_length=200)
     url = models.URLField(blank=True)
-    icon = CloudinaryField('image', blank=True, null=True)
+    icon = models.ImageField(upload_to='events/', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "Events"
@@ -45,18 +294,18 @@ class Events(models.Model):
 
 class Gallery(models.Model):
     label = models.CharField(max_length=200)
-    image = CloudinaryField('image')
+    image = models.ImageField(upload_to='gallery/')
 
     class Meta:
         verbose_name_plural = "Gallery"
 
     def __str__(self):
         return self.label
-    
+
 
 class Workshops(models.Model):
     title = models.CharField(max_length=200)
-    photo = CloudinaryField('image')
+    photo = models.ImageField(upload_to='workshops/')
     instructors = models.JSONField(default=list, blank=True, null=True)
     mode = models.CharField(max_length=50)
     date = models.CharField(max_length=100)
@@ -72,7 +321,7 @@ class Workshops(models.Model):
 
     def __str__(self):
         return self.title
-    
+
 
 class PreviousWorkshops(models.Model):
     title = models.CharField(max_length=200)
@@ -88,7 +337,7 @@ class PreviousWorkshops(models.Model):
 
 class Lectures(models.Model):
     title = models.CharField(max_length=200)
-    photo = CloudinaryField('image')
+    photo = models.ImageField(upload_to='lectures/')
     instructors = models.JSONField(default=list, blank=True, null=True)
     mode = models.CharField(max_length=50)
     date = models.CharField(max_length=100)
@@ -104,7 +353,7 @@ class Lectures(models.Model):
 
     def __str__(self):
         return self.title
-    
+
 
 class PreviousLectures(models.Model):
     title = models.CharField(max_length=200)
@@ -120,7 +369,7 @@ class PreviousLectures(models.Model):
 
 class Pal(models.Model):
     label = models.CharField(max_length=200)
-    photo = CloudinaryField('image',blank=True, null=True)
+    photo = models.ImageField(upload_to='pal/', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "Pal"
@@ -135,7 +384,7 @@ class UgCouncil(models.Model):
     phone = models.CharField(max_length=50, blank=True)
     email = models.EmailField(blank=True)
     linkedin = models.URLField(blank=True)
-    photo = CloudinaryField('image', blank=True, null=True)
+    photo = models.ImageField(upload_to='ugcouncil/', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "UgCouncil"
@@ -150,7 +399,7 @@ class PhdDPPC(models.Model):
     phone = models.CharField(max_length=50, blank=True)
     email = models.EmailField(blank=True)
     linkedin = models.URLField(blank=True)
-    photo = CloudinaryField('image', blank=True, null=True)
+    photo = models.ImageField(upload_to='phd_dppc/', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "PhdDPPC"
@@ -165,7 +414,7 @@ class PhdCPPC(models.Model):
     phone = models.CharField(max_length=50, blank=True)
     email = models.EmailField(blank=True)
     linkedin = models.URLField(blank=True)
-    photo = CloudinaryField('image', blank=True, null=True)
+    photo = models.ImageField(upload_to='phd_cppc/', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "PhdCPPC"
@@ -180,7 +429,7 @@ class PhdSPPC(models.Model):
     phone = models.CharField(max_length=50, blank=True)
     email = models.EmailField(blank=True)
     linkedin = models.URLField(blank=True)
-    photo = CloudinaryField('image', blank=True, null=True)
+    photo = models.ImageField(upload_to='phd_sppc/', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "PhdSPPC"
@@ -195,7 +444,7 @@ class LanguageTeam(models.Model):
     phone = models.CharField(max_length=50, blank=True)
     email = models.EmailField(blank=True)
     linkedin = models.URLField(blank=True)
-    photo = CloudinaryField('image', blank=True, null=True)
+    photo = models.ImageField(upload_to='language_team/', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "LanguageTeam"
@@ -206,7 +455,7 @@ class LanguageTeam(models.Model):
 
 class LanguageCourses(models.Model):
     title = models.CharField(max_length=200)
-    photo = CloudinaryField('image')
+    photo = models.ImageField(upload_to='language_courses/')
     instructors = models.JSONField(default=list, blank=True, null=True)
     mode = models.CharField(max_length=50)
     date = models.CharField(max_length=100)
@@ -236,12 +485,23 @@ class BranchRepresentative(models.Model):
     phone = models.CharField(max_length=20, blank=True)
     email = models.EmailField(blank=True)
     linkedin = models.URLField(blank=True)
-    photo = CloudinaryField('image', blank=True, null=True)
+    photo = models.ImageField(upload_to='branch_reps/', blank=True, null=True)
     tenure = models.CharField(max_length=7, choices=TENURE_CHOICES, default="2024-28")
 
     class Meta:
         verbose_name_plural = "BranchRepresentatives"
 
-
     def __str__(self):
         return f"{self.name} ({self.tenure})"
+
+
+class Carousel(models.Model):
+    label = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='carousel/')
+    link = models.URLField(blank=True, null=True)
+
+    class Meta:
+        verbose_name_plural = "Carousel"
+
+    def __str__(self):
+        return self.label

@@ -1,6 +1,6 @@
 from rest_framework.generics import ListAPIView
-from .models import Contacts, Events,Council,Gallery,Workshops,PreviousWorkshops,Lectures,PreviousLectures,Pal,PhdDPPC,PhdCPPC,PhdSPPC,UgCouncil,LanguageTeam,LanguageCourses,BranchRepresentative
-from .serializers import ContactsSerializer, EventsSerializer, CouncilSerializer, GallerySerializer,WorkshopsSerializer,PreviousWorkshopsSerializer,LecturesSerializer,PreviousLecturesSerializer,PalSerializer,UgCouncilSerializer,PhdCPPCSerializer,PhdDPPCSerializer,PhdSPPCSerializer,LanguageTeamSerializer,LanguageCoursesSerializer,BranchRepresentativesSerializer
+from .models import Contacts, Events,Council,Gallery,Workshops,PreviousWorkshops,Lectures,PreviousLectures,Pal,PhdDPPC,PhdCPPC,PhdSPPC,UgCouncil,LanguageTeam,LanguageCourses,BranchRepresentative, Carousel
+from .serializers import ContactsSerializer, EventsSerializer, CouncilSerializer, GallerySerializer,WorkshopsSerializer,PreviousWorkshopsSerializer,LecturesSerializer,PreviousLecturesSerializer,PalSerializer,UgCouncilSerializer,PhdCPPCSerializer,PhdDPPCSerializer,PhdSPPCSerializer,LanguageTeamSerializer,LanguageCoursesSerializer,BranchRepresentativesSerializer, CarouselSerializer
 
 class Contacts(ListAPIView):
     queryset = Contacts.objects.all()
@@ -80,3 +80,8 @@ class BranchRepresentatives(ListAPIView):
     def get_queryset(self):
         tenure = self.request.GET.get("tenure", "2024-28") 
         return BranchRepresentative.objects.filter(tenure=tenure)
+
+
+class CarouselListView(ListAPIView):
+    queryset = Carousel.objects.all()
+    serializer_class = CarouselSerializer
